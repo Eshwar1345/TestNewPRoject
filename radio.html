@@ -1,0 +1,546 @@
+<div id="tacticPopup" class="tacticPopup_classN" style="height: 340px;">
+	<div class="tacticPopupHead dragHandle">
+		<span>Radio</span> <img class="dialogue_title_image"
+			src="images/radio.png">
+	</div>
+	<div class="popUpTab">
+		<div class="tactic_tabs">
+			<ul>
+				<li style="padding-top: 8px">Info</li>
+				<li style="padding-top: 8px">Spots</li>
+				<li>External Behavior</li>
+				<li>Internal Behavior</li>
+				<li style="padding-top: 8px">Frequency</li>
+			</ul>
+		</div>
+	</div>
+	<div class="tacticTabContent">
+
+		<!-- Info Tab -->
+		<div class="tacticTabDiv tacticInfoTab tactical_toolkit_img_icon"
+			style="display: none">
+
+			<!-- Info Tab 1st Part -->
+			<div>
+				<table cellspacing="10">
+					<colgroup>
+						<col width="17%">
+						<col width="20%">
+						<col width="15%">
+						<col width="20%">
+						<col width="28%">
+					</colgroup>					
+					<tr>
+			           <td fieldName="productName">Product/Service:</td>
+			             <td><div><span id="prodDropdown" title="Product"><span class="prodIvTaSelectionBoxOnEvent" style="overflow: hidden;">Select Product</span><img class="dropdown-image" src="images/dropdown_arrow.png"></span></div>
+			            	  <div id ="targetProduct" class="selectionDropdownOnEventPopUp" style="display: none; top:109px !important;z-index: 1;">
+			            	  <div id = "productList" class= "eventProductList" ></div> 
+							</div>
+			             </td>
+			              
+			            <td fieldName="campaignName">Campaign:</td>
+			            <td><select fieldName="campaignName" id = "marketingCampaign" class = "dropdown1 planningMarketingCampaignSelect">
+			                <!-- <option value = "create">Create New Campaign</option> -->
+			              </select>
+			               <div id="addNewCampaignButton" style="margin-top: 2px;">
+			              <span title="Add Campaign" style="cursor:pointer;color:#70A158;font-size:17px;font-weight: bolder;margin-left: 3px;">+</span></div></td>
+			              
+			            <td><span style="position:relative; top:3px;">Job #:</span>
+			            <input id = "job" class = "numberOnly"/></td>
+			          </tr>
+			          <tr>
+			             <td fieldName="industryVerticalName">Industry Vertical:</td>
+			             <td><div><span id="ivDropdown" title="IndustryVertical"><span class="prodIvTaSelectionBoxOnEvent" style="overflow: hidden;">Select Vertical(s)</span><img class="dropdown-image" src="images/dropdown_arrow.png"></span></div>
+			            	  <div id ="industryVerticals" class="selectionDropdownOnEventPopUp" style="display: none;">
+			            	  <div id = "verticalList" ></div> 
+			             		<div id = "verticalSaveCancel" class="divIvAndTaCancelSave">
+										<a href="javascript:;" id="verticalCancelBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownCancel">Cancel</a>
+										<a href="javascript:;"  id="verticalSaveBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownSave">Save</a>
+								</div>
+							</div>
+			             </td>
+			              
+			            <td fieldName="targetAudienceName">Target Audience:</td>
+			            <td><div><span id="taDropdown" title="TargetAudience"><span class="prodIvTaSelectionBoxOnEvent" style="overflow: hidden;">Select Audience(s)</span><img class="dropdown-image" src="images/dropdown_arrow.png"></span></div>
+			             	  <div id ="targetAudience" class="selectionDropdownOnEventPopUp" style="display: none;">
+			             	   <div id = "audienceList" ></div> 
+			             		<div id = "audienceSaveCancel" class="divIvAndTaCancelSave">
+										<a href="javascript:;" id="audienceCancelBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownCancel">Cancel</a>
+										<a href="javascript:;"  id="audienceSaveBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownSave">Save</a>
+								</div>
+			             	  
+			             	  
+			             	  </div>
+			             </td>
+			            
+			            
+			            <td> 
+			            	<div style = "float:right;text-align:left;margin-right: -21px;"><span id="saDropdown" title="SellingArea"><span class="prodIvTaSelectionBoxOnEvent" style="overflow: hidden;">Select Area(s)</span><img class="dropdown-image" src="images/dropdown_arrow.png"></span></div>
+			             	  <div id ="sellingArea" class="selectionDropdownOnEventPopUp" style="display: none;">
+			             	   <div id = "sellingAreaList" ></div> 
+			             		<div id = "sellingAreaSaveCancel" class="divSaCancelSave">
+										<a href="javascript:;" id="sellingAreaCancelBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownCancel">Cancel</a>
+										<a href="javascript:;"  id="sellingAreaSaveBtn" class="cancelSaveBtnOnEventSelectionDropDown eventSelectionDropDownSave">Save</a>
+								</div>
+			             	  </div>
+			             	  <div style="float:right;line-height:18px;"><span>Selling Area:</span></div>
+			             </td>
+          			</tr>
+					<tr>
+						<td fieldName="name">Tactic Name:</td>
+						<td>
+							<input fieldName="name" id="name" class="nameOnly draftReq" /> 
+							<span id="tacticalLibraryGear" class="gear-icon planningCalendarGear"></span>
+						</td>
+						<td>Description:</td>
+						<td colspan="2"><input id="description" class="" style="width: 99% ! important;" />
+						</td>
+					</tr>
+
+					<tr>
+						<td fieldName="startDate">Start Date:</td>
+						<td><input fieldName="startDate" id="startDate" class=" startDatepicker draftReq" /></td>
+						<td fieldName="endDate"><span id="endDatel">End Date:</span></td>
+						<td><span id="endDateI"><input fieldName="endDate" id="endDate_input" class="endDatepicker datepicker draftReq" /></span></td>
+						<td fieldname="purchaseType">
+						<span style="position: relative; top: 3px;">Purchase Type:</span> 
+						<select name="purchase" class="purchase dropdown1 libraryBased eventSingle behaviorBased" id="purchaseType" style="width: 100px !important;">
+								<option value="Terrestrial">Terrestrial</option>
+								<option value="Internet">Internet</option>
+								<option value="Satellite">Satellite</option>
+						</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="boldText">Total Cost:</td>
+						<td><input id="totalCost" class="numberAndDotOnly boldText inputDisabled" formatId="money2"  disabled = "disabled"/>
+						</td>
+						<td> </td>
+						<td>
+							<label for="purchased">Purchased:</label>
+							<input type="radio" id="purchased" name="purchaseType" value="PURCHASED" checked="checked">
+							<label for="earned">Earned:</label>
+							<input type="radio" id="earned" name="purchaseType" value="EARNED">
+						</td>
+						  <td> <span style="position:relative; top:3px;">Owner:</span>
+			           			<select fieldName="ownerName" id = "owner" class = "dropdown1 planningSelectionBox"></select>
+			             </td>
+					</tr>
+				</table>
+			</div>
+
+			<!-- Info Tab 2nd Part -->
+			<div class="externalCostSection">
+				<table cellspacing="10">
+					<colgroup>
+						<col width="17%">
+						<col width="20%">
+						<col width="17%">
+						<col width="20%">
+						<col width="26%">
+					</colgroup>
+					<tr>
+						<td class="boldText">External Cost (Total):</td>
+						<td><input id="totalExtCost"
+							class="numberAndDotOnly boldText inputDisabled" formatId="money2"  disabled = "disabled"/>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td fieldName="agencyCost">Agency Cost:</td>
+						<td><input fieldName="agencyCost" id="agencyCost"
+							class="numberAndDotOnly eventSingle calculate behaviorBased"
+							formatId="money2" />
+						</td>
+						<td fieldName="productionCost">Production Cost:</td>
+						<td><input fieldName="productionCost" id="productionCost"
+							class="numberAndDotOnly eventSingle  calculate behaviorBased"
+							formatId="money2" />
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td fieldName="medialBuy">Media Buy:</td>
+						<td><input fieldName="medialBuy" id="mediaBuy"
+							class="mediaBuy numberAndDotOnly eventSingle libraryBased"
+							formatId="money2" ></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td fieldname="sizeOfMarket">Target Market:</td>
+						<td><input fieldName="sizeOfMarket" id="sizeOfMarket"
+							class="numberAndDotOnly eventSingle calculate libraryBased"
+							formatId="number" />
+						</td>
+						<td fieldName="imperssions">Impressions:</td>
+						<td><input fieldName="imperssions" id="noOfImpressions"
+							class="numberAndDotOnly eventSingle noOfImpressions calculate libraryBased"
+							formatId="number" />
+						</td>
+						<td></td>
+					</tr>
+					<tr style="display: none">
+						<td>Net Impressions:</td>
+						<td><input id="netImpressions" class="numberOnly eventSingle"
+							formatId="number" />
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						 <td><span  id="grpsl">GRPs:</span></td>
+						<td><input id="grps"
+							class="numberOnly eventSingle libraryBased inputDisabled"
+							 formatId="number" disabled = "disabled"/></td> 
+						<td>Cost/Impression:</td>
+						<td><input id="costPerImpressions"
+							class="numberOnly eventSingle costPerImpressions libraryBased inputDisabled"
+							 formatId="money2" disabled = "disabled"/>
+						</td>
+						<td><span>CPM:</span> <input id="cpm"
+							class="numberAndDotOnly eventSingle libraryBased inputDisabled"
+							formatId="money2" disabled = "disabled" style="float: none;" >
+						</td>
+					</tr>
+				 	<tr>
+						<td id="reachl">Reach:</td>
+						<td><input id="reach"
+							class="numberOnly eventSingle libraryBased inputDisabled"
+							 formatId="number" disabled = "disabled"/>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td id="freql">Frequency:</td>
+						<td><input id="frequency"
+							class="numberOnly eventSingle libraryBased inputDisabled"
+							 formatId="number" disabled = "disabled"/>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> 
+				</table>
+			</div>
+
+			<!-- Info Tab 3rd Part -->
+			<div class="internalCostSection">
+				<table cellspacing="10">
+					<colgroup>
+						<col width="17%">
+						<col width="20%">
+						<col width="17%">
+						<col width="20%">
+						<col width="26%">
+					</colgroup>
+					<tr>
+						<td class="boldText">Internal Cost (Total):</td>
+						<td><input id="totalIntCost"
+							class="numberAndDotOnly boldText inputDisabled" formatId="money2"  disabled = "disabled"/>
+						</td>
+						<td>Workflow Profile:</td>
+						<td><select
+							class="dropdown1  workflowProfile_dropDown"
+							id="workflowProfile"></select>
+						</td>
+						<td colspan="2">
+							<div class="linkToInternaCostDetail">View Workflow Summary</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Spots Tab -->
+		<div class="tacticTabDiv tacticSpotsTab" style="display: none">
+		
+			<div class="spotsTableDiv">
+				<table id="radioSpotsTable" class="mediaSpotsTable">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Date</th>
+							<th># of Spots</th>
+							<th>Impressions per Spot('000)</th>
+							<th>Price per Spot</th>
+							<th>Total Impressions</th>
+							<th>Total Price</th>
+							<th>GRP</th>
+							<th>Reach</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="spot_row" spotId="">
+							<td class="remove_spot">x</td>
+							<td><input class="num spot_date" type="text" value></td>
+							<td><input class="num spot_input" type="text" value></td>
+							<td><input class="num spot_input" type="text" value></td>
+							<td><input class="num spot_input" type="text" value></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td></td>
+							<td>Totals:</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tfoot>
+				
+				</table>
+			</div>
+			<div style="float: left;padding-top: 25px;">
+				<div class="mediaCalendarText">Click dates on calendar to<br>schedule spots</div>
+				<div id="scheduleCalendar" class="js_calendar touch_calendarDiv"></div>
+		 	<div id="dvImportSegments" class="fileupload ">
+   
+      <div>
+       	<button class="add_btn right clickable gradient" id="download">Download Excel Template</button></div>
+       <div>
+            <input type="file" class="upload" name="File Upload" id="txtFileUpload" accept=".csv" /></div>
+ 
+</div> 
+			</div>
+		</div>
+		<!-- Spots Empty Tab -->
+		<div class="tacticTabDiv tacticSpotsEmptyTab" style="display: none;font-size: large;padding: 40px;">
+			Future Enhancement
+		</div>
+		<!-- External Behavior Tab -->
+		<div class="tacticTabDiv tacticExternalTab" style="display: none">
+			<div>
+				<table cellspacing="10">
+					<colgroup>
+						<col width="20%">
+						<col width="18%">
+						<col width="18%">
+						<col width="20%">
+						<col width="24%">
+					</colgroup>
+					<tr>
+						<td fieldName="ctr">CTR (Click-thru Rate):</td>
+						<td><input fieldName="ctr" id="ctr"
+							class="numberAndDotOnly eventSingle behaviorBased"
+							formatId="percent2">
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td fieldName="ctrlow">CTR (Low):</td>
+						<td>
+							<div>% of Norm</div> <input fieldName="ctrlow" id="ctrlow"
+							class="numberAndDotOnly eventSingle behaviorBased"
+							formatId="percent2">
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td fieldName="conversionRate">Conversion Rate:</td>
+						<td><input fieldName="conversionRate" id="conversionRate"
+							class="numberAndDotOnly eventSingle behaviorBased"
+							formatId="percent2">
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td fieldName="qualityOfTouch">Quality of Touch:</td>
+						<td><input fieldName="qualityOfTouch" id="qualityOfTouch"
+							class="numberOnly eventSingle calculate behaviorBased"
+							formatId="number">
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+					<tr>
+						<td>
+							<div fieldName="marketingAllocation" class="marketingActAware">Marketing
+								Allocation:</div>
+						</td>
+						<td>
+							<div>% Market Activation</div> <input
+							fieldName="marketingAllocation" id="marketActivation"
+							class="numberOnly allocation eventSingle behaviorBased"
+							formatId="percent">
+						</td>
+						<td>
+							<div>% Market Awareness</div> <input
+							fieldName="marketingAllocation" id="marketAwareness"
+							class="numberOnly allocation eventSingle behaviorBased"
+							formatId="percent">
+						</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="emptyBorderTd"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!-- Internal Behavior Tab -->
+		<div class="tacticTabDiv tacticInternalTab" style="display: none">
+
+			<div>
+				<span>Workflow Profile:</span> <select
+					class="dropdown1  workflowProfile_dropDown"
+					id="workflowProfile"></select>
+				<div
+					class="linkToTaskResponsibility planning_calendar_internal_cost custom_behavior_view new_linkToTaskResponsibility">View
+					Workflow Profile</div>
+			</div>
+			<div class="taskResponsibilitySummary"></div>
+		</div>
+
+		<!-- Frequency Tab 1st part-->
+		<div class="tacticTabDiv tacticOtherTab" style="display: none">
+			<div class="tacticTabField">
+				<div>
+					<table cellspacing="10">
+						<colgroup>
+							<col width="17%">
+							<col width="20%">
+							<col width="17%">
+							<col width="20%">
+							<col width="26%">
+						</colgroup>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>Apply Seasonality <input type="checkbox">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- End Tabs -->
+
+	</div>
+	<div class="tactic_button_row">
+		<button class="add_btn right clickable gradient" id="save">Save</button>
+		<button type="button" class="add_btn right clickable gradient"
+			id="copy" style="margin-right: 2px;">Copy</button>
+		<button type="button" class="saveDraftBtn right clickable gradient"
+			id="saveDraft">Save As Draft</button>
+		<button id="cancel" class="popup_cancel left clickable gradient">Cancel</button>
+		<button id="delete" class="popup_cancel left clickable gradient">Delete</button>
+	</div>
+	<div class="impressionsByDayView">
+		<div class="impressionsByDayViewClose">
+			<img style="float: right; cursor: pointer;" src="images/delete.gif">
+		</div>
+		<div class="impressionsByDayViewContent"></div>
+	</div>
+
+
+	<div id="TacticalVerticalPopup" style="display: none;">
+		<div class="tactical_popup">
+			<div class="popupHeading dragHandle">Tactical Library</div>
+			<div class="tactical_vertical_content">
+				<div class="tactical_vertical_search">
+					<span>
+						<button id='addNew' class='clickable greyButtnStyle addNewClass'
+							style='height: 24px; max-width: 73px; margin-left: -341px;'>Add
+							New</button> </span> <input type="text" id="tactical_vertical_search_text"
+						class="nameOnly tactic-library-search tactic-search-input "
+						value="Search Tactical Library"
+						style="color: gray; margin: 10px 34px 0 99px !important; height: 22px !important;">
+					<div id="search_image">
+						<img src="images/Magnifying.png"
+							style="cursor: pointer; margin: 12px 0 0 -61px;" id="search_img" />
+					</div>
+				</div>
+				<div id="vertical_content">
+					<div class="tactical_vertical_information">
+						<div id="information_content">
+							<div class="frozen_content tactical-library-div"></div>
+							<div class="un_frozen_content tactical-library-div"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup_btm_btns">
+				<button id="save" class="popup_save right">Save</button>
+				<button id="cancel" class="popup_cancel left">Cancel</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="librarySubsetPopup" style="display: none;">
+		<div class="tactical_popup">
+			<div class="popupHeading dragHandle">Tactical Library</div>
+			<div class="library_subset_content">
+				<div class="industry-profile-popup">
+					<div class="addNewBtn">
+						<button id="addNew" class="clickable greyButtnStyle addNewClass">Add
+							New</button>
+					</div>
+					<div class="search-content">
+						<input value="Search Tactical Library"
+							class="nameOnly search-box input-field-content"
+							style="color: gray;" id="library_subset_search_text" />
+					</div>
+				</div>
+				<div id="vertical_content" style="height: 388px;"></div>
+				<div class="industryVerticalPaggination librarySubsetPaggination"
+					style="width: 40%">
+					<div class="paginationTab">
+						<a id="first" class="clickable left arrow-left-first"></a> <a
+							id="prev" class="clickable left arrow-left"></a>
+						<div class="pageList left"></div>
+						<a id="next" class="clickable arrow-right left"></a> <a id="last"
+							class="clickable arrow-right-last left"></a>
+					</div>
+					<span class="paginationDetails"></span>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
