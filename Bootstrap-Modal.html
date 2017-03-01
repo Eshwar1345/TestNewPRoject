@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+	img {
+		margin-right: 10px;
+	}
+	.modal-header,
+	.modal-footer {
+		border: none;
+	}
+	.modal-body {
+		padding: 0 15px;
+	}
+	.modal-body h2 {
+		margin-top: 0;
+	}
+	.modal-footer .btn {
+		border-color: #ea8f18;
+		color: #ea8f18;
+	}
+	.modal-content:after {
+		border-bottom: 20px solid transparent;
+		border-left: 0 solid transparent;
+		border-right: 20px solid #fff;
+		border-top: 20px solid transparent;
+		content: "";
+		height: 0px;
+		left: -20px;
+		position: absolute;
+		top: calc(50% - 30px);
+		width: 0px;
+	}
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#tipsModal">Open Modal</button>
+
+  <div class="modal fade" id="tipsModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <div class="modal-title"><img src="img/tooltip.gif" />Tip</div>
+        </div>
+        <div class="modal-body">
+		  <h2><img src="img/publish.gif" />Publish</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip e</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>
