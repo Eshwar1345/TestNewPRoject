@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>angular Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link data-require="twitter-bootstrap@*" data-semver="3.2.0" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  
+  <script data-require="angular.js@1.4.2" data-semver="1.4.2" src="https://code.angularjs.org/1.4.2/angular.js"></script>
+  <script data-require="angular-bootstrap@0.12.0" data-semver="0.12.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+  <script src="https://rawgit.com/Elijen/angular-popover-toggle/v0.0.10/popover-toggle.js"></script>
+  <style>
+	.container.active .child-container:after {
+	    content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		top: 0;
+		left: 0;
+	}
+	.active label {
+		padding-left: 20px;
+		position: relative;
+	}
+	.active input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 9;
+	}
+  </style>
+</head>
+<body>
+
+<div class="container" ng-app="myApp" ng-controller="myCtrl">
+  <h3>Tooltip Options</h3>
+  <label>
+	<input type="checkbox" ng-model="showTips"> show popover?
+  </label>
+  <div class="row child-container">
+    <!--button class="btn btn-success btn-md">Click me</button>
+    <button class="btn btn-warning btn-md">Hover over me</button-->
+    <button class="btn btn-successbtn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button><hr>
+	<button class="btn btn-warning btn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button><hr>
+	<button class="btn btn-danger btn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button><hr>
+	<button class="btn btn-success btn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button><hr>
+	<button class="btn btn-warning btn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button><hr>
+	<button class="btn btn-danger btn-md" popover="Hello!" popover-toggle="showTips" popover-placement="right">Focus (tab or click)</button>
+  </div>
+</div>
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+/*$(document).ready(function(){
+    $('.btn-success').tooltip({title: "Hooray!", trigger: "click"}); 
+    $('.btn-warning').tooltip({title: "Hooray!", trigger: "hover"}); 
+    $('.btn').tooltip({title: "Hooray!", trigger: "focus"}); 
+});*/
+	angular.module('myApp', ['ui.bootstrap', 'popoverToggle']).controller('myCtrl', function($scope){
+		$scope.showTips = false;
+	});
+	$("input").click(function(){console.log('clicked');$(".container").toggleClass('active')})
+</script>
+
+</body>
+</html>
