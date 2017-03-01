@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <!--style type="text/css">
+  @charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}
+  </style-->
+    <title>AngularJS Popup</title>
+	<meta name="robots" content="noindex, nofollow">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://localhost/blp-pulse-publish/assets/css/publish-t/ceo-publish.css">
+	<!--script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script-->
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+	<script src="js/App.js"></script>
+			<!--script>
+			var _gaq = _gaq || []; 
+            _gaq.push(['_setAccount', 'UA-43981329-1']); 
+            _gaq.push(['_trackPageview']); 
+            (function() { 
+            var ga = document.createElement('script'); 
+            ga.type = 'text/javascript'; 
+            ga.async = true; 
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+            var s = document.getElementsByTagName('script')[0]; 
+            s.parentNode.insertBefore(ga, s); 
+            })(); 
+		</script-->
+</head>
+<body class="container ng-scope" ng-app="PopupDemo">
+
+	<div class="row">
+		<div id="cov" class="col-md-6 col-sm-6 col-xs-6">
+			<div ng-controller="PopupDemoCont" class="ng-scope">
+			<div class="login">
+			 <h2>AngularJS Popup Demo</h2>
+			</div>
+			<div class="row"> 
+			<div class="col-xs-12">
+			<button ng-click="simplepopup($event)" class="btn btn-warning btn-block popbutt">Simple Popup</button>
+			</div>
+			<div class="col-xs-12">
+			<button ng-click="popupwithclose()" class="btn btn-warning btn-block popbutt">Popup With Close</button>
+			</div>
+			<div class="col-xs-12">
+			<button ng-click="popupwithparameter('John')" class="btn btn-warning  btn-block popbutt"> Popup With Parameter</button>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
